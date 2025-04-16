@@ -35,15 +35,18 @@ In this lab, you will learn how to use Azure Synapse Analytics to perform near r
 ### 3. Connect via Synapse Studio
 - Open Synapse Studio.
 - Go to "Manage > Linked services" and connect to your Cosmos DB account.
-
 ### 4. Query Data with Serverless SQL Pool
-```sql
+``sql
 SELECT TOP 10 *
 FROM OPENROWSET(
     'CosmosDB',
     'Account=<account>;Database=<database>;Collection=<collection>',
-    'SELECT * FROM c') AS documents
+    'SELECT * FROM c') AS documents '
 
+## 📊 Real-World Scenario
+In a retail system, customer orders are stored in Cosmos DB. With Azure Synapse Link, you can query those order records in near real time to monitor trends, forecast demand, and make data-driven inventory decisions without ETL processes.
+
+---
 ## Screenshots
 
 ![lab14](https://github.com/user-attachments/assets/3c0b60ff-7a16-4dd9-8c43-2eff81e99af8)
@@ -64,3 +67,4 @@ FROM OPENROWSET(
 ![lab149newitem](https://github.com/user-attachments/assets/569a7c7e-cf8d-48ee-817c-cac1df41a195)
 ![lab149newitem2](https://github.com/user-attachments/assets/062f1b80-1fc2-481a-9080-32487d53d8a1)
 
+  
